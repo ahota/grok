@@ -28,6 +28,7 @@ include_directories(
   ${GROK_SOURCE_DIR}/src/bin/common
   ${GROK_SOURCE_DIR}/src/bin/jp2
   ${GROK_SOURCE_DIR}/src/include
+  ${GROK_SOURCE_DIR}/src/lib/openjp2/htj2k/common
 )
 # Defines the source code for the library
 set(GROK_SRCS
@@ -132,6 +133,48 @@ set(GROK_SRCS
   ${CMAKE_CURRENT_SOURCE_DIR}/enkitTS/TaskScheduler.h
   ${CMAKE_CURRENT_SOURCE_DIR}/enkitTS/TaskScheduler.cpp  
   ${CMAKE_CURRENT_SOURCE_DIR}/enkitTS/LockLessMultiReadPipe.h
+
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/common/ojph_arch.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/common/ojph_arg.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/common/ojph_base.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/common/ojph_codestream.h  
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/common/ojph_defs.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/common/ojph_file.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/common/ojph_mem.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/common/ojph_message.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/common/ojph_params.h
+
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/codestream/ojph_codestream.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/codestream/ojph_codestream_local.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/codestream/ojph_params.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/codestream/ojph_params_local.h  
+   
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/coding/ojph_block_decoder.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/coding/ojph_block_decoder.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/coding/ojph_block_encoder.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/coding/ojph_block_encoder.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/coding/table0.h  
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/coding/table1.h   
+
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/others/ojph_arch.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/others/ojph_file.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/others/ojph_mem.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/others/ojph_message.cpp
+    
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_colour_avx2.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_colour_avx.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_colour.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_colour.h  
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_colour_local.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_colour_sse2.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_colour_sse.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_transform_avx2.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_transform_avx.cpp 
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_transform.cpp   
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_transform.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_transform_local.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_transform_sse2.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/htj2k/transform/ojph_transform_sse.cpp
 )
 
 option(GRK_DISABLE_TPSOT_FIX "Disable TPsot==TNsot fix. See https://github.com/uclouvain/openjpeg/issues/254." OFF)
