@@ -43,7 +43,7 @@ endif()
 
 if (NOT "$ENV{GROK_CI_ARCH}" STREQUAL "")
 	if (APPLE)
-	  set(CCFLAGS_ARCH "-arch $ENV{GROK_CI_ARCH}")
+	  set(CCFLAGS_ARCH "-march=haswell -O3 -arch $ENV{GROK_CI_ARCH}")
 	else()
 		if ("$ENV{GROK_CI_ARCH}" MATCHES "^i[3-6]86$")
 			set(CCFLAGS_ARCH "-m32 -march=$ENV{GROK_CI_ARCH}")
